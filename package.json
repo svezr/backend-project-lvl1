@@ -1,0 +1,25 @@
+{
+  "name": "bgs",
+  "version": "1.0.0",
+  "description": "Brain games study project from hexlet.io course.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/svezr/backend-project-lvl1.git"
+  },
+  "keywords": [
+    "brain",
+    "braingames",
+    "game",
+    "games"
+  ],
+  "author": "Andrew Birukov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/svezr/backend-project-lvl1/issues"
+  },
+  "homepage": "https://github.com/svezr/backend-project-lvl1#readme"
+}
