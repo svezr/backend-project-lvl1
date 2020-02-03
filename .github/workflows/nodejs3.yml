@@ -13,8 +13,12 @@ jobs:
     steps:
 
     - uses: actions/checkout@v2
-    - name: ESLint test
-      run: make lint
+    - name: import plugin
+    - run: npm install eslint-plugin-import    
+    - name: Install airbnb syntax
+    - run: npm install eslint-config-airbnb-base
+    - name: ESLint test      
+    - run: make lint
       #uses: actions/setup-node@v1
       #with:
         #node-version: ${{ matrix.node-version }}
