@@ -13,10 +13,10 @@ jobs:
     steps:
     - name: pwd
       run: pwd
-    - name: install deps
-      run: npm install
-    - name: run lint
-      run: make lint
+    #- name: install deps
+#      run: npm install
+#    - name: run lint
+#      run: make lint
       #uses: actions/setup-node@v1
       #with:
         #node-version: ${{ matrix.node-version }}
