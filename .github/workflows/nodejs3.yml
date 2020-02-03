@@ -13,12 +13,9 @@ jobs:
     steps:
 
     - uses: actions/checkout@v2
-    - name: import plugin
-    - run: npm install eslint-plugin-import    
-    - uses: actions/checkout@v2      
-    - name: Install airbnb syntax
-    - run: npm install eslint-config-airbnb-base
-    - uses: actions/checkout@v2      
+    - name: install deps
+    - run: npm install
+    - uses: actions/checkout@v2            
     - name: ESLint test      
     - run: make lint
       #uses: actions/setup-node@v1
