@@ -11,8 +11,8 @@ jobs:
         #node-version: [8.x, 10.x, 12.x]
 
     steps:
-    - name: install deps0
-      run: cd ../
+    - name: pwd
+      run: pwd
     - name: install deps
       run: npm install
     - name: run lint
