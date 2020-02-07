@@ -1,8 +1,6 @@
 #!/usr/bin/env node
 
-import queryName from '..';
+import { onGameSessionStart } from '..';
 
-console.log('Welcome to the Brain Games!');
-
-const userName = queryName();
+const userName = onGameSessionStart();
 console.log(`Hello, ${userName}!`);
