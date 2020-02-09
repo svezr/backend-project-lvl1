@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import readlineSync from 'readline-sync';
-import { onGameSessionStart } from '../index.js';
+import { onGameSessionStart, generateNumber } from '../index.js';
 
 const isEven = (number) => (number % 2 === 0);
 
@@ -29,8 +29,6 @@ const convertAnswerBack = (boolAnswer) => {
   return result;
 };
 
-const generateNumber = (min = 0, max = 99) => Math.floor(Math.random() * (max - min + 1) + min);
-
 const brainEvenGame = (userName = 'Player', tries = 3) => {
   console.log('Answer "yes" if the number is even otherwise answer "no".');
 
@@ -45,7 +43,7 @@ const brainEvenGame = (userName = 'Player', tries = 3) => {
     const isCorrectAnswer = (isEven(inputNumber) === userResult);
 
     if (!isCorrectAnswer) {
-      console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${convertAnswerBack(!userResult)}.\nLet's try again, ${userName}`);
+      console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${convertAnswerBack(!userResult)}".\nLet's try again, ${userName}`);
       return false;
     }
 
