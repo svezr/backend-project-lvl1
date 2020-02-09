@@ -6,12 +6,11 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
-    "prepublishOnly": "npm run build",
     "publish": "npm publish --dry-run"
   },
   "bin": {
-    "brain-games": "src/bin/brain-games.js"
+    "brain-games": "src/bin/brain-games.js",
+    "brain-even": "src/bin/brain-even.js"
   },
   "files": [
     "dist"
