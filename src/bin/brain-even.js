@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import readlineSync from 'readline-sync';
-import { onGameSessionStart } from '..';
+import { onGameSessionStart } from '../index.js';
 
 const isEven = (number) => (number % 2 === 0);
 

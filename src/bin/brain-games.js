@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { onGameSessionStart } from '..';
+import { onGameSessionStart } from '../index.js';
 
 const userName = onGameSessionStart();
 console.log(`Hello, ${userName}!`);
