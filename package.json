@@ -11,7 +11,7 @@
     "publish": "npm publish --dry-run"
   },
   "bin": {
-    "brain-games": "bin/brain-games.js"
+    "brain-games": "src/bin/brain-games.js"
   },
   "files": [
     "dist"
