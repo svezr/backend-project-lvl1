@@ -1,7 +1,9 @@
 #!/usr/bin/env node
 
 import readlineSync from 'readline-sync';
-import { onGameSessionStart, generateNumber } from '../index.js';
+import { onGameSessionStart, generateNumber, config } from '../index.js';
+
+const gameId = "brainEven";
 
 const isEven = (number) => (number % 2 === 0);
 
@@ -30,6 +32,8 @@ const convertAnswerBack = (boolAnswer) => {
 };
 
 const brainEvenGame = (userName = 'Player', tries = 3) => {
+  const gameConfig = config[gameId];
+
   console.log('Answer "yes" if the number is even otherwise answer "no".');
 
   for (let i = 0; i < tries; i += 1) {
