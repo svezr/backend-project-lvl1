@@ -1,9 +1,11 @@
 #!/usr/bin/env node
-
-import readlineSync from 'readline-sync';
-import { onGameSessionStart, generateNumber, generatePairNumber } from '../index.js';
+import {
+  Config, startGame, generateNumber, generatePairNumber,
+}
+  from '../index.js';
 
 // easyMode means, that one of operand is in [1, 9]
+
 const operations = [
   {
     number: 0,
@@ -27,43 +29,36 @@ const operations = [
     easyMode: true,
   }];
 
-const queryAnswer = () => readlineSync.question('Your answer: ');
+const startBrainCalc = () => {
+  const operationNumber = generateNumber(0, 2);
 
+  const operationObject = operations[operationNumber];
 
-const brainCalcGame = (userName = 'Player', tries = 3) => {
-  console.log('What is the result of the expression?');
+  const { easyMode } = operationObject;
 
-  for (let i = 0; i < tries; i += 1) {
-    const operationNumber = generateNumber(0, 2);
-    const operationObject = operations[operationNumber];
-    const { easyMode } = operationObject;
+  const [firstNumber, secondNumber] = generatePairNumber(easyMode);
 
-    const [firstNumber, secondNumber] = generatePairNumber(easyMode);
+  const operationSymbol = operations[operationNumber].symb;
 
-    const operationSymbol = operations[operationNumber].symb;
-    const operationFunction = operationObject.fn;
+  const operationFunction = operationObject.fn;
 
-    const expectingResult = operationFunction(firstNumber, secondNumber).toString();
+  const gameAnswer = operationFunction(firstNumber, secondNumber).toString();
+  const gameText = `${firstNumber} ${operationSymbol} ${secondNumber}`;
 
-    console.log(`Question: ${firstNumber} ${operationSymbol} ${secondNumber}`);
+  const result = { gameText, gameAnswer };
 
-    const userResult = queryAnswer();
-
-    const isCorrectAnswer = (expectingResult === userResult);
-
-    if (!isCorrectAnswer) {
-      console.log(`"${userResult}" is wrong answer ;(. Correct answer was "${expectingResult}".\nLet's try again, ${userName}`);
-      return false;
-    }
-
-    console.log('Correct!');
-  }
-
-  console.log(`Congratulations, ${userName}!`);
-  return true;
+  return result;
 };
 
+const gameConfig = {
+  gameFn: startBrainCalc,
+  roundCount: 3,
+  gameTerms: 'What is the result of the expression?',
+  gameQuestion: 'Question: ',
+  gameAnswer: 'Your answer: ',
+  gameLose: '"%userAnswer%" is wrong answer ;(. Correct answer was "%correctAnswer%".\nLet\'s try again, %userName%!',
+  gameRight: 'Correct!',
+  gameWin: 'Congratulations, %userName%!',
+};
 
-const userNameInput = onGameSessionStart();
-
-brainCalcGame(userNameInput);
+startGame(new Config(gameConfig));

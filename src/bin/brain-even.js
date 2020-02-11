@@ -1,64 +1,29 @@
 #!/usr/bin/env node
 
-import readlineSync from 'readline-sync';
-import { onGameSessionStart, generateNumber, config } from '../index.js';
-
-const gameId = "brainEven";
+import { generateNumber, Config, startGame } from '../index.js';
 
 const isEven = (number) => (number % 2 === 0);
 
-const queryAnswer = () => {
-  const possibleAnswers = ['yes', 'no'];
-  let userAnswer;
+const startBrainEven = () => {
+  const numb = generateNumber();
 
-  userAnswer = readlineSync.question('Your answer: ');
-
-  if (!possibleAnswers.includes(userAnswer)) {
-    userAnswer = 'no';
-  }
-
-  return userAnswer;
-};
-
-const convertAnswer = (answer) => (answer === 'yes');
-
-const convertAnswerBack = (boolAnswer) => {
-  let result = 'no';
-  if (boolAnswer) {
-    result = 'yes';
-  }
+  const result = {
+    gameText: numb.toString(),
+    gameAnswer: isEven(numb) ? 'yes' : 'no',
+  };
 
   return result;
 };
 
-const brainEvenGame = (userName = 'Player', tries = 3) => {
-  const gameConfig = config[gameId];
-
-  console.log('Answer "yes" if the number is even otherwise answer "no".');
-
-  for (let i = 0; i < tries; i += 1) {
-    const inputNumber = generateNumber();
-
-    console.log(`Question: ${inputNumber}`);
-
-    const userAnswer = queryAnswer(); // str answer
-    const userResult = convertAnswer(userAnswer); // boolean
-
-    const isCorrectAnswer = (isEven(inputNumber) === userResult);
-
-    if (!isCorrectAnswer) {
-      console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${convertAnswerBack(!userResult)}".\nLet's try again, ${userName}`);
-      return false;
-    }
-
-    console.log('Correct!');
-  }
-
-  console.log(`Congratulations, ${userName}!`);
-  return true;
+const gameConfig = {
+  gameFn: startBrainEven,
+  roundCount: 3,
+  gameTerms: 'Answer "yes" if the number is even otherwise answer "no".',
+  gameQuestion: 'Question: ',
+  gameAnswer: 'Your answer: ',
+  gameLose: '"%userAnswer%" is wrong answer ;(. Correct answer was "%correctAnswer%".\nLet\'s try again, %userName%!',
+  gameRight: 'Correct!',
+  gameWin: 'Congratulations, %userName%!',
 };
 
-
-const userNameInput = onGameSessionStart();
-
-brainEvenGame(userNameInput);
+startGame(new Config(gameConfig));
