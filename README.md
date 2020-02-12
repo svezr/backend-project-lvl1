@@ -9,8 +9,14 @@ Brain Games.
 
 ![make_lint](https://github.com/svezr/backend-project-lvl1/workflows/make_lint/badge.svg)
 
-Asciinema with brain-even
+Asciinema with brain-even:
+
 [![asciicast](https://asciinema.org/a/CyvHmSnED8JxjBU1yQt8ASps9.svg)](https://asciinema.org/a/CyvHmSnED8JxjBU1yQt8ASps9)
 
-Asciinema with brain-gcd
+Asciinema with brain-gcd:
+
 [![asciicast](https://asciinema.org/a/8SQKAf8CMlmKWz1acUk8vxHiv.svg)](https://asciinema.org/a/8SQKAf8CMlmKWz1acUk8vxHiv)
+
+Asciinema with brain-progression
+
+[![asciicast](https://asciinema.org/a/TD4steXObm2QB6ptFkv45hWci.svg)](https://asciinema.org/a/TD4steXObm2QB6ptFkv45hWci)
