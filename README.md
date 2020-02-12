@@ -7,7 +7,10 @@ Brain Games.
 
 [![Test Coverage](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/test_coverage)](https://codeclimate.com/github/codeclimate/codeclimate/test_coverage)
 
-![](https://github.com/svezr/backend-project-lvl1/workflows/make_lint/badge.svg)
+![make_lint](https://github.com/svezr/backend-project-lvl1/workflows/make_lint/badge.svg)
 
 Asciinema with brain-even
 [![asciicast](https://asciinema.org/a/CyvHmSnED8JxjBU1yQt8ASps9.svg)](https://asciinema.org/a/CyvHmSnED8JxjBU1yQt8ASps9)
+
+Asciinema with brain-gcd
+[![asciicast](https://asciinema.org/a/8SQKAf8CMlmKWz1acUk8vxHiv.svg)](https://asciinema.org/a/8SQKAf8CMlmKWz1acUk8vxHiv)

@@ -1,18 +1,15 @@
 #!/usr/bin/env node
 
-import { generateNumber, Config, startGame } from '../index.js';
+import {
+  createResultObj, generateNumber, Config, startGame,
+} from '../index.js';
 
 const isEven = (number) => (number % 2 === 0);
 
 const startBrainEven = () => {
   const numb = generateNumber();
 
-  const result = {
-    gameText: numb.toString(),
-    gameAnswer: isEven(numb) ? 'yes' : 'no',
-  };
-
-  return result;
+  return createResultObj(numb.toString(), isEven(numb) ? 'yes' : 'no');
 };
 
 const gameConfig = {

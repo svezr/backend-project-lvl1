@@ -1,5 +1,7 @@
 import readlineSync from 'readline-sync';
 
+export const createResultObj = (gameText, gameAnswer) => ({ gameText, gameAnswer });
+
 export const generateNumber = (min = 0, max = 99) => {
   const rnd = Math.random() * (max - min + 1) + min;
   return Math.floor(rnd);

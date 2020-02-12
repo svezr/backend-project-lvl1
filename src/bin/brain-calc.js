@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import {
-  Config, startGame, generateNumber, generatePairNumber,
+  createResultObj, Config, startGame, generateNumber, generatePairNumber,
 }
   from '../index.js';
 
@@ -45,9 +45,7 @@ const startBrainCalc = () => {
   const gameAnswer = operationFunction(firstNumber, secondNumber).toString();
   const gameText = `${firstNumber} ${operationSymbol} ${secondNumber}`;
 
-  const result = { gameText, gameAnswer };
-
-  return result;
+  return createResultObj(gameText, gameAnswer);
 };
 
 const gameConfig = {
