@@ -21,14 +21,17 @@ const isPrime = (numb) => {
 const startGamePrime = () => {
   const numb = generateNumber(2, 99);
 
-  return createResultObj(numb, isPrime(numb) ? 'yes' : 'no');
+  const gameText = numb;
+  const gameAnswer = isPrime(numb) ? 'yes' : 'no';
+
+  return createResultObj(gameText, gameAnswer);
 };
 
 const gameConfig = {
   gameFn: startGamePrime,
   roundCount: 3,
   gameTerms: 'Answer "yes" if given number is prime. Otherwise answer "no".',
-  gameQuestion: 'Question: ',
+  gameQuestion: 'Question:',
   gameAnswer: 'Your answer: ',
   gameLose: '"%userAnswer%" is wrong answer ;(. Correct answer was "%correctAnswer%".\nLet\'s try again, %userName%!',
   gameRight: 'Correct!',

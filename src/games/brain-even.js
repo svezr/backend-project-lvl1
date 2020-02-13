@@ -9,14 +9,18 @@ const isEven = (number) => (number % 2 === 0);
 const startBrainEven = () => {
   const numb = generateNumber();
 
-  return createResultObj(numb.toString(), isEven(numb) ? 'yes' : 'no');
+  const gameAnswer = isEven(numb) ? 'yes' : 'no';
+  const gameText = numb.toString();
+
+  return createResultObj(gameText, gameAnswer);
 };
 
 const gameConfig = {
+  name: 'Brain-even',
   gameFn: startBrainEven,
   roundCount: 3,
   gameTerms: 'Answer "yes" if the number is even otherwise answer "no".',
-  gameQuestion: 'Question: ',
+  gameQuestion: 'Question:',
   gameAnswer: 'Your answer: ',
   gameLose: '"%userAnswer%" is wrong answer ;(. Correct answer was "%correctAnswer%".\nLet\'s try again, %userName%!',
   gameRight: 'Correct!',

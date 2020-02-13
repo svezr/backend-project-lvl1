@@ -19,14 +19,17 @@ const startGameProgression = (numberOfElements = 10) => {
 
   resultArr[indexToHide] = '..';
 
-  return createResultObj(resultArr.join(' '), correctAnswer);
+  const gameText = resultArr.join(' ');
+  const gameAnswer = correctAnswer;
+
+  return createResultObj(gameText, gameAnswer);
 };
 
 const gameConfig = {
   gameFn: startGameProgression,
   roundCount: 3,
   gameTerms: 'What number is missing in the progression?',
-  gameQuestion: 'Question: ',
+  gameQuestion: 'Question:',
   gameAnswer: 'Your answer: ',
   gameLose: '"%userAnswer%" is wrong answer ;(. Correct answer was "%correctAnswer%".\nLet\'s try again, %userName%!',
   gameRight: 'Correct!',

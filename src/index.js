@@ -15,25 +15,16 @@ export const generatePairNumber = (easyMode = false) => {
 };
 
 // Формат описания игры
-
 export class Config {
   constructor(gameConfig) {
-    this.gameFn = gameConfig.gameFn;
-    this.roundCount = gameConfig.roundCount ? gameConfig.roundCount : 3;
-    this.gameTerms = gameConfig.gameTerms ? gameConfig.gameTerms : '';
-    this.gameQuestion = gameConfig.gameQuestion ? gameConfig.gameQuestion : '';
-    this.gameAnswer = gameConfig.gameAnswer ? gameConfig.gameAnswer : '';
-    this.gameLose = gameConfig.gameLose ? gameConfig.gameLose : '';
-    this.gameRight = gameConfig.gameRight ? gameConfig.gameRight : '';
-    this.gameWin = gameConfig.gameWin ? gameConfig.gameWin : '';
-  }
-
-  getId() {
-    return this.id;
-  }
-
-  getName() {
-    return this.name;
+    this.gameFn = gameConfig.gameFn; // Функция игры, возвращает {вопрос, правильный ответ}
+    this.roundCount = gameConfig.roundCount ? gameConfig.roundCount : 3; // Количество раундов.
+    this.gameTerms = gameConfig.gameTerms ? gameConfig.gameTerms : ''; // Условия игры
+    this.gameQuestion = gameConfig.gameQuestion ? gameConfig.gameQuestion : ''; // Текст вопроса
+    this.gameAnswer = gameConfig.gameAnswer ? gameConfig.gameAnswer : ''; // Текст ответа
+    this.gameLose = gameConfig.gameLose ? gameConfig.gameLose : ''; // Сообщение проигравшему
+    this.gameRight = gameConfig.gameRight ? gameConfig.gameRight : ''; // Текст правильного ответа
+    this.gameWin = gameConfig.gameWin ? gameConfig.gameWin : ''; // Сообщение выйгрывшему
   }
 
   getRoundCount() {
@@ -52,6 +43,10 @@ export class Config {
     return this.gameAnswer;
   }
 
+  getRight() {
+    return this.gameRight;
+  }
+
   getLose(userName, userAnswer, correctAnswer) {
     return this.gameLose.replace('%userAnswer%', userAnswer).replace('%correctAnswer%', correctAnswer).replace('%userName%', userName);
   }
@@ -59,21 +54,13 @@ export class Config {
   getWin(userName) {
     return this.gameWin.replace('%userName%', userName);
   }
-
-  getRight() {
-    return this.gameRight;
-  }
 }
-
-// хранить config игры в модуле каждой игры
-// там же хранить вызов функции
 
 const getUserName = () => readlineSync.question('May I have your name? ');
 
-const showGreeting = () => {
+export const showGreeting = () => {
   console.log('Welcome to the Brain Games!');
 };
-
 
 const queryAnswer = (questionString) => readlineSync.question(questionString);
 
@@ -96,7 +83,9 @@ export const startGame = (gameConfig) => {
   for (let i = 1; i <= gameCount; i += 1) {
     const { gameText, gameAnswer } = gameConfig.gameFn();
 
-    showMsg(`${gameQuestionText} ${gameText}`); // todo Fix it!
+    const roundQuestion = `${gameQuestionText} ${gameText}`;
+
+    showMsg(roundQuestion);
 
     const userAnswer = queryAnswer(gameAnswerText);
 

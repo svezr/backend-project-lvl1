@@ -1,20 +1,23 @@
 {
-  "name": "brain-games",
+  "name": "brain-small-math-games",
   "version": "1.0.0",
   "description": "Brain games study project from hexlet.io course.",
   "main": "src/index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "publish": "npm publish --dry-run"
-  },
-  "bin": {
-    "brain-games": "src/bin/brain-games.js",
-    "brain-even": "src/bin/brain-even.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "files": [
-    "dist"
+    "src"
   ],
+  "bin": {
+    "brain-games": "src/games/brain-games.js",
+    "brain-even": "src/games/brain-even.js",
+    "brain-calc": "src/games/brain-calc.js",
+    "brain-gcd": "src/games/brain-gcd.js",
+    "brain-prime": "src/games/brain-prime.js",
+    "brain-progression": "src/games/brain-progression.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/svezr/backend-project-lvl1.git"

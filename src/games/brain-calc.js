@@ -5,25 +5,21 @@ import {
   from '../index.js';
 
 // easyMode means, that one of operand is in [1, 9]
-
 const operations = [
   {
     number: 0,
-    name: 'addDigits',
     symb: '+',
     fn: (a, b) => a + b,
     easyMode: false,
   },
   {
     number: 1,
-    name: 'substractDigits',
     symb: '-',
     fn: (a, b) => a - b,
     easyMode: false,
   },
   {
     number: 2,
-    name: 'multiplytDigits',
     symb: '*',
     fn: (a, b) => a * b,
     easyMode: true,
@@ -52,7 +48,7 @@ const gameConfig = {
   gameFn: startBrainCalc,
   roundCount: 3,
   gameTerms: 'What is the result of the expression?',
-  gameQuestion: 'Question: ',
+  gameQuestion: 'Question:',
   gameAnswer: 'Your answer: ',
   gameLose: '"%userAnswer%" is wrong answer ;(. Correct answer was "%correctAnswer%".\nLet\'s try again, %userName%!',
   gameRight: 'Correct!',

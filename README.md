@@ -1,26 +1,44 @@
 # backend-project-lvl1
 Brain Games.
 
-1st project from the JS:Backend course of hexlet.io.
+1 проект курса Бэкенд JavaScript (node.js) Hexlet (https://hexlet.io)
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
 
 [![Test Coverage](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/test_coverage)](https://codeclimate.com/github/codeclimate/codeclimate/test_coverage)
 
-![make_lint](https://github.com/svezr/backend-project-lvl1/workflows/make_lint/badge.svg)
+![eslint](https://github.com/svezr/backend-project-lvl1/workflows/make_lint/badge.svg)
 
-Asciinema with brain-even:
+Демонстрация проверки стандартов кодирования (make lint):
 
-[![asciicast](https://asciinema.org/a/CyvHmSnED8JxjBU1yQt8ASps9.svg)](https://asciinema.org/a/CyvHmSnED8JxjBU1yQt8ASps9)
+[![asciicast](https://asciinema.org/a/0IKTOvxmZ4UYjsaM2T1fc8MIR.svg)](https://asciinema.org/a/0IKTOvxmZ4UYjsaM2T1fc8MIR)
 
-Asciinema with brain-gcd:
+Демонстрация установки (npm link):
 
-[![asciicast](https://asciinema.org/a/8SQKAf8CMlmKWz1acUk8vxHiv.svg)](https://asciinema.org/a/8SQKAf8CMlmKWz1acUk8vxHiv)
+[![asciicast](https://asciinema.org/a/B3oyG9BNwP4zXSVvxBmUMLro0.svg)](https://asciinema.org/a/B3oyG9BNwP4zXSVvxBmUMLro0)
 
-Asciinema with brain-progression:
+Демонстрация публикации (make publish):
 
-[![asciicast](https://asciinema.org/a/TD4steXObm2QB6ptFkv45hWci.svg)](https://asciinema.org/a/TD4steXObm2QB6ptFkv45hWci)
+[![asciicast](https://asciinema.org/a/tfdluCrQxH5dE1KvS6MolybM6.svg)](https://asciinema.org/a/tfdluCrQxH5dE1KvS6MolybM6)
 
-Asciinema with brain-prime:
+**Демонстрация работы игровых модулей:**
 
-[![asciicast](https://asciinema.org/a/9UzNptV1AmGJ2KgYkvowuPr7t.svg)](https://asciinema.org/a/9UzNptV1AmGJ2KgYkvowuPr7t)
+brain-even:
+
+[![asciicast](https://asciinema.org/a/82lyPaSvV0DzXaal07AFeIlaS.svg)](https://asciinema.org/a/82lyPaSvV0DzXaal07AFeIlaS)
+
+brain-calc:
+
+[![asciicast](https://asciinema.org/a/9ropWXOZ98r6RtfZat3siDS2f.svg)](https://asciinema.org/a/9ropWXOZ98r6RtfZat3siDS2f)
+
+brain-gcd:
+
+[![asciicast](https://asciinema.org/a/cTEp0oalfGQn5BSmxDNRAfrIx.svg)](https://asciinema.org/a/cTEp0oalfGQn5BSmxDNRAfrIx)
+
+brain-progression:
+
+[![asciicast](https://asciinema.org/a/H22i086d6Cp0aw0eUudiNpJE5.svg)](https://asciinema.org/a/H22i086d6Cp0aw0eUudiNpJE5)
+
+brain-prime:
+
+[![asciicast](https://asciinema.org/a/TrPnrzefNmTreBrAy1uJPQScb.svg)](https://asciinema.org/a/TrPnrzefNmTreBrAy1uJPQScb)
