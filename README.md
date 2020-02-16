@@ -3,9 +3,9 @@ Brain Games.
 
 1 проект курса Бэкенд JavaScript (node.js) Hexlet (https://hexlet.io)
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/f2f4e603ea388912fb0e/maintainability)](https://codeclimate.com/github/svezr/backend-project-lvl1/maintainability)
 
-[![Test Coverage](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/test_coverage)](https://codeclimate.com/github/codeclimate/codeclimate/test_coverage)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/f2f4e603ea388912fb0e/test_coverage)](https://codeclimate.com/github/svezr/backend-project-lvl1/test_coverage)
 
 ![eslint](https://github.com/svezr/backend-project-lvl1/workflows/make_lint/badge.svg)
 
