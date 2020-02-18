@@ -2,7 +2,7 @@
 
 import {
   createResultObj, generateNumber, startGame,
-} from '../index.js';
+} from '../../index.js';
 
 const startGameProgression = (numberOfElements = 10) => {
   const startNumber = generateNumber();

@@ -2,7 +2,7 @@
 import {
   createResultObj, startGame, generateNumber, generatePairNumber,
 }
-  from '../index.js';
+  from '../../index.js';
 
 // easyMode means, that one of operand is in [1, 9]
 const operations = [

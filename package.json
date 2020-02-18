@@ -11,9 +11,9 @@
     "src"
   ],
   "bin": {
-    "brain-games": "src/bin/games/brain-games.js",
+    "brain-games": "src/bin/brain-games.js",
     "brain-even": "src/bin/games/brain-even.js",
-    "brain-calc": "src/bin/ames/brain-calc.js",
+    "brain-calc": "src/bin/games/brain-calc.js",
     "brain-gcd": "src/bin/games/brain-gcd.js",
     "brain-prime": "src/bin/games/brain-prime.js",
     "brain-progression": "src/bin/games/brain-progression.js"

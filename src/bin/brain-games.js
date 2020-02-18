@@ -2,15 +2,9 @@
 
 import { showGreeting } from '../index.js';
 
-const gamesArr = [];
-
-gamesArr.push('brain-even');
-gamesArr.push('brain-calc');
-gamesArr.push('brain-gcd');
-gamesArr.push('brain-progression');
-gamesArr.push('brain-prime');
-
 showGreeting();
+
+const gamesArr = ['brain-even', 'brain-calc', 'brain-gcd', 'brain-progression', 'brain-prime'];
 
 const gameNames = gamesArr.reduce((prev, item) => `${prev}\n * "${item}"`, '');
 
