@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import {
-  createResultObj, generateNumber, Config, startGame,
+  createResultObj, generateNumber, startGame,
 } from '../index.js';
 
 // by Euclid
@@ -38,13 +38,7 @@ const startBrainGCD = () => {
 
 const gameConfig = {
   gameFn: startBrainGCD,
-  roundCount: 3,
   gameTerms: 'Find the greatest common divisor of given numbers.',
-  gameQuestion: 'Question:',
-  gameAnswer: 'Your answer: ',
-  gameLose: '"%userAnswer%" is wrong answer ;(. Correct answer was "%correctAnswer%".\nLet\'s try again, %userName%!',
-  gameRight: 'Correct!',
-  gameWin: 'Congratulations, %userName%!',
 };
 
-startGame(new Config(gameConfig));
+startGame(gameConfig);

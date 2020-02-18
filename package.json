@@ -2,7 +2,7 @@
   "name": "brain-small-math-games",
   "version": "1.0.0",
   "description": "Brain games study project from hexlet.io course.",
-  "main": "src/index.js",
+  "main": "src/bin/index.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,12 +11,12 @@
     "src"
   ],
   "bin": {
-    "brain-games": "src/games/brain-games.js",
-    "brain-even": "src/games/brain-even.js",
-    "brain-calc": "src/games/brain-calc.js",
-    "brain-gcd": "src/games/brain-gcd.js",
-    "brain-prime": "src/games/brain-prime.js",
-    "brain-progression": "src/games/brain-progression.js"
+    "brain-games": "src/bin/games/brain-games.js",
+    "brain-even": "src/bin/games/brain-even.js",
+    "brain-calc": "src/bin/ames/brain-calc.js",
+    "brain-gcd": "src/bin/games/brain-gcd.js",
+    "brain-prime": "src/bin/games/brain-prime.js",
+    "brain-progression": "src/bin/games/brain-progression.js"
   },
   "repository": {
     "type": "git",
@@ -38,10 +38,6 @@
     "readline-sync": "^1.4.10"
   },
   "devDependencies": {
-    "@babel/cli": "^7.8.3",
-    "@babel/core": "^7.8.3",
-    "@babel/node": "^7.8.3",
-    "@babel/preset-env": "^7.8.3",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.20.0",
