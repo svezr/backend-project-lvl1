@@ -11,34 +11,34 @@ Brain Games.
 
 Демонстрация проверки стандартов кодирования (make lint):
 
-[![asciicast](https://asciinema.org/a/0IKTOvxmZ4UYjsaM2T1fc8MIR.svg)](https://asciinema.org/a/0IKTOvxmZ4UYjsaM2T1fc8MIR)
+[![asciicast](https://asciinema.org/a/JSEdlNgnXxqJUEFGj2YYE8N3Q.svg)](https://asciinema.org/a/JSEdlNgnXxqJUEFGj2YYE8N3Q)
 
 Демонстрация установки (npm link):
 
-[![asciicast](https://asciinema.org/a/B3oyG9BNwP4zXSVvxBmUMLro0.svg)](https://asciinema.org/a/B3oyG9BNwP4zXSVvxBmUMLro0)
+[![asciicast](https://asciinema.org/a/eH3TgtOYg6Z2F5Eo0eyJj6Phz.svg)](https://asciinema.org/a/eH3TgtOYg6Z2F5Eo0eyJj6Phz)
 
 Демонстрация публикации (make publish):
 
-[![asciicast](https://asciinema.org/a/tfdluCrQxH5dE1KvS6MolybM6.svg)](https://asciinema.org/a/tfdluCrQxH5dE1KvS6MolybM6)
+[![asciicast](https://asciinema.org/a/qsbdq8HdEzAmamOhtCKi6uqfq.svg)](https://asciinema.org/a/qsbdq8HdEzAmamOhtCKi6uqfq)
 
 **Демонстрация работы игровых модулей:**
 
 brain-even:
 
-[![asciicast](https://asciinema.org/a/82lyPaSvV0DzXaal07AFeIlaS.svg)](https://asciinema.org/a/82lyPaSvV0DzXaal07AFeIlaS)
+[![asciicast](https://asciinema.org/a/rdoZbP950wdawjPyBOeNM9b9A.svg)](https://asciinema.org/a/rdoZbP950wdawjPyBOeNM9b9A)
 
 brain-calc:
 
-[![asciicast](https://asciinema.org/a/9ropWXOZ98r6RtfZat3siDS2f.svg)](https://asciinema.org/a/9ropWXOZ98r6RtfZat3siDS2f)
+[![asciicast](https://asciinema.org/a/c2cF06RnOJTq5U8chFbv9UWtD.svg)](https://asciinema.org/a/c2cF06RnOJTq5U8chFbv9UWtD)
 
 brain-gcd:
 
-[![asciicast](https://asciinema.org/a/cTEp0oalfGQn5BSmxDNRAfrIx.svg)](https://asciinema.org/a/cTEp0oalfGQn5BSmxDNRAfrIx)
+[![asciicast](https://asciinema.org/a/tRG0ueHhD7V9GfL3eCbzU1NzN.svg)](https://asciinema.org/a/tRG0ueHhD7V9GfL3eCbzU1NzN)
 
 brain-progression:
 
-[![asciicast](https://asciinema.org/a/H22i086d6Cp0aw0eUudiNpJE5.svg)](https://asciinema.org/a/H22i086d6Cp0aw0eUudiNpJE5)
+[![asciicast](https://asciinema.org/a/L84SUswrxkv1heVDjyuGVEfcH.svg)](https://asciinema.org/a/L84SUswrxkv1heVDjyuGVEfcH)
 
 brain-prime:
 
-[![asciicast](https://asciinema.org/a/TrPnrzefNmTreBrAy1uJPQScb.svg)](https://asciinema.org/a/TrPnrzefNmTreBrAy1uJPQScb)
+[![asciicast](https://asciinema.org/a/SH7mgp4wZe1qjRctHHM7fHsrH.svg)](https://asciinema.org/a/SH7mgp4wZe1qjRctHHM7fHsrH)
