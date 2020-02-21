@@ -7,10 +7,10 @@ import {
 const isEven = (number) => (number % 2 === 0);
 
 const startBrainEven = () => {
-  const numb = generateNumber();
+  const newNumber = generateNumber();
 
-  const gameAnswer = isEven(numb) ? 'yes' : 'no';
-  const gameText = numb.toString();
+  const gameAnswer = isEven(newNumber) ? 'yes' : 'no';
+  const gameText = newNumber.toString();
 
   const result = createResultObj(gameText, gameAnswer);
 
