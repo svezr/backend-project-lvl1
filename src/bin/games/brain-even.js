@@ -12,7 +12,9 @@ const startBrainEven = () => {
   const gameAnswer = isEven(numb) ? 'yes' : 'no';
   const gameText = numb.toString();
 
-  return createResultObj(gameText, gameAnswer);
+  const result = createResultObj(gameText, gameAnswer);
+
+  return result;
 };
 
 const gameConfig = {

@@ -5,43 +5,58 @@ import {
   from '../../index.js';
 
 // easyMode means, that one of operand is in [1, 9]
-const operations = [
-  {
-    number: 0,
+const operations = {
+  0: {
     symb: '+',
     fn: (a, b) => a + b,
     easyMode: false,
   },
-  {
-    number: 1,
+  1: {
     symb: '-',
     fn: (a, b) => a - b,
     easyMode: false,
   },
-  {
-    number: 2,
+  2: {
     symb: '*',
     fn: (a, b) => a * b,
     easyMode: true,
-  }];
+  },
 
-const startBrainCalc = () => {
-  const operationNumber = generateNumber(0, 2);
+  getRandomOperation() {
+    const maxIndexOperation = Object.keys(this).length - 1;
+    const minIndexOperation = 0;
+    const randomIndexOperation = generateNumber(minIndexOperation, maxIndexOperation).toString();
 
-  const operationObject = operations[operationNumber];
+    console.log(`random: ${randomIndexOperation}`);
 
-  const { easyMode } = operationObject;
+    const randomObject = this[randomIndexOperation];
 
-  const [firstNumber, secondNumber] = generatePairNumber(easyMode);
+    console.log(randomObject);
 
-  const operationSymbol = operations[operationNumber].symb;
+    return randomObject;
+  },
+};
 
-  const operationFunction = operationObject.fn;
+const getBrainCalcGame = (operationObject) => {
+  const { easyMode: onlyOneDigit, symb: operationSymbol, fn: operationFunction } = operationObject;
+
+  const [firstNumber, secondNumber] = generatePairNumber(onlyOneDigit);
 
   const gameAnswer = operationFunction(firstNumber, secondNumber).toString();
+
   const gameText = `${firstNumber} ${operationSymbol} ${secondNumber}`;
 
-  return createResultObj(gameText, gameAnswer);
+  const result = createResultObj(gameText, gameAnswer);
+
+  return result;
+};
+
+const startBrainCalc = () => {
+  const operationObject = operations.getRandomOperation();
+
+  const result = getBrainCalcGame(operationObject);
+
+  return result;
 };
 
 const gameConfig = {

@@ -5,9 +5,8 @@ import {
 } from '../../index.js';
 
 // by Euclid
-const startBrainGCD = () => {
-  const a = generateNumber();
-  const b = generateNumber();
+
+const getGCDOfPair = (a, b) => {
   if (a === b) {
     const gameAnswer = a.toString();
     const gameText = `${a} ${b}`;
@@ -34,6 +33,13 @@ const startBrainGCD = () => {
   const gameAnswer = smallNum.toString();
 
   return createResultObj(gameText, gameAnswer);
+};
+
+const startBrainGCD = () => {
+  const number1 = generateNumber();
+  const number2 = generateNumber();
+
+  return getGCDOfPair(number1, number2);
 };
 
 const gameConfig = {

@@ -4,25 +4,37 @@ import {
   createResultObj, generateNumber, startGame,
 } from '../../index.js';
 
-const startGameProgression = (numberOfElements = 10) => {
-  const startNumber = generateNumber();
-  const incNumber = generateNumber(2, 9);
-  const indexToHide = generateNumber(3, numberOfElements - 3);
+const isThisIndexToHide = (i, j) => (i === j);
 
-  const resultArr = [startNumber];
+const getProgression = (startNumber, diffValue, numberOfElements, indexToHide) => {
+  const resultArr = [];
 
-  for (let i = 1; i < numberOfElements; i += 1) {
-    resultArr.push(resultArr[i - 1] + incNumber);
+  for (let i = 0; i < numberOfElements; i += 1) {
+    const elementOfProgression = isThisIndexToHide(i, indexToHide) ? '..' : startNumber + diffValue * i;
+    resultArr.push(elementOfProgression);
   }
 
-  const correctAnswer = resultArr[indexToHide].toString();
-
-  resultArr[indexToHide] = '..';
-
+  const correctAnswer = startNumber + diffValue * indexToHide;
   const gameText = resultArr.join(' ');
-  const gameAnswer = correctAnswer;
+  const gameAnswer = correctAnswer.toString();
 
   return createResultObj(gameText, gameAnswer);
+};
+
+const startGameProgression = (numberOfElements = 10) => {
+  const startNumber = generateNumber();
+
+  const minDiffValue = 2;
+  const maxDiffValue = 9;
+  const diffValue = generateNumber(minDiffValue, maxDiffValue);
+
+  const minHideValue = 3;
+  const maxHideValue = numberOfElements - 2;
+  const indexToHide = generateNumber(minHideValue, maxHideValue);
+
+  const result = getProgression(startNumber, diffValue, numberOfElements, indexToHide);
+
+  return result;
 };
 
 const gameConfig = {

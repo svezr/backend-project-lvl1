@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 
 export const generateNumber = (min = 0, max = 99) => {
-  const rnd = Math.random() * (max - min + 1) + min;
+  const rnd = Math.random() * (max - min) + min;
   return Math.floor(rnd);
 };
 
