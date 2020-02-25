@@ -1,53 +1,52 @@
-import {
-  createResultObj, startGame, generateNumber, generatePairNumber,
-}
-  from '../index.js';
+import { generateNumber, generatePairNumber } from '../utils.js';
+import startGame from '../index.js';
 
-// easyMode means, that one of operand is in [1, 9]
-const operations = {
-  0: {
-    symb: '+',
-    fn: (a, b) => a + b,
-    easyMode: false,
+const operations = [
+  {
+    sign: '+',
+    operationFunction: (a, b) => a + b,
+    onlyOneDigitAllowed: false,
   },
-  1: {
-    symb: '-',
-    fn: (a, b) => a - b,
-    easyMode: false,
+  {
+    sign: '-',
+    operationFunction: (a, b) => a - b,
+    onlyOneDigitAllowed: false,
   },
-  2: {
-    symb: '*',
-    fn: (a, b) => a * b,
-    easyMode: true,
+  {
+    sign: '*',
+    operationFunction: (a, b) => a * b,
+    onlyOneDigitAllowed: true,
   },
+];
 
-  getRandomOperation() {
-    const maxIndexOperation = Object.keys(this).length - 1;
-    const minIndexOperation = 0;
-    const randomIndexOperation = generateNumber(minIndexOperation, maxIndexOperation).toString();
+const getRandomOperation = () => {
+  const countOfOperations = operations.length;
+  const maxIndexOperation = countOfOperations - 1;
 
-    const randomObject = this[randomIndexOperation];
+  const randomIndexOperation = generateNumber(maxIndexOperation).toString();
 
-    return randomObject;
-  },
+  const randomObject = operations[randomIndexOperation];
+
+  return randomObject;
 };
 
-const getBrainCalcGame = (operationObject) => {
-  const { easyMode: onlyOneDigit, symb: operationSymbol, fn: operationFunction } = operationObject;
 
-  const [firstNumber, secondNumber] = generatePairNumber(onlyOneDigit);
+const getBrainCalcGame = (operationObject) => {
+  const { onlyOneDigitAllowed, sign, operationFunction } = operationObject;
+
+  const [firstNumber, secondNumber] = generatePairNumber(onlyOneDigitAllowed);
 
   const gameAnswer = operationFunction(firstNumber, secondNumber).toString();
 
-  const gameText = `${firstNumber} ${operationSymbol} ${secondNumber}`;
+  const gameQuestion = `${firstNumber} ${sign} ${secondNumber}`;
 
-  const result = createResultObj(gameText, gameAnswer);
+  const result = { gameQuestion, gameAnswer };
 
   return result;
 };
 
-const brainCalcFunction = () => {
-  const operationObject = operations.getRandomOperation();
+const startBrainCalcGame = () => {
+  const operationObject = getRandomOperation();
 
   const result = getBrainCalcGame(operationObject);
 
@@ -55,7 +54,7 @@ const brainCalcFunction = () => {
 };
 
 const gameConfig = {
-  gameFn: brainCalcFunction,
+  gameFunction: startBrainCalcGame,
   gameTerms: 'What is the result of the expression?',
 };
 

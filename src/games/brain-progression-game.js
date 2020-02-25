@@ -1,42 +1,41 @@
-import {
-  createResultObj, generateNumber, startGame,
-} from '../index.js';
+import { generateNumber } from '../utils.js';
+import startGame from '../index.js';
 
 const isThisIndexToHide = (i, j) => (i === j);
 
-const getProgression = (startNumber, diffValue, numberOfElements, indexToHide) => {
-  const resultArr = [];
+const getQuestion = (startNumber, diffValue, numberOfElements, indexToHide) => {
+  const result = [];
 
   for (let i = 0; i < numberOfElements; i += 1) {
     const elementOfProgression = isThisIndexToHide(i, indexToHide) ? '..' : startNumber + diffValue * i;
-    resultArr.push(elementOfProgression);
+    result.push(elementOfProgression);
   }
 
   const correctAnswer = startNumber + diffValue * indexToHide;
-  const gameText = resultArr.join(' ');
+  const gameQuestion = result.join(' ');
   const gameAnswer = correctAnswer.toString();
 
-  return createResultObj(gameText, gameAnswer);
+  return { gameQuestion, gameAnswer };
 };
 
-const startGameProgressionFunction = (numberOfElements = 10) => {
+const startProgressionGame = (numberOfElements = 10) => {
   const startNumber = generateNumber();
 
   const minDiffValue = 2;
   const maxDiffValue = 9;
-  const diffValue = generateNumber(minDiffValue, maxDiffValue);
+  const diffValue = generateNumber(maxDiffValue, minDiffValue);
 
   const minHideValue = 3;
   const maxHideValue = numberOfElements - 2;
-  const indexToHide = generateNumber(minHideValue, maxHideValue);
+  const indexToHide = generateNumber(maxHideValue, minHideValue);
 
-  const result = getProgression(startNumber, diffValue, numberOfElements, indexToHide);
+  const result = getQuestion(startNumber, diffValue, numberOfElements, indexToHide);
 
   return result;
 };
 
 const gameConfig = {
-  gameFn: startGameProgressionFunction,
+  gameFunction: startProgressionGame,
   gameTerms: 'What number is missing in the progression?',
 };
 

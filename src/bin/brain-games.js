@@ -1,8 +1,6 @@
 #!/usr/bin/env node
 
-import { showGreeting } from '../index.js';
-
-showGreeting();
+console.log('Welcome to the Brain Games!');
 
 const gamesArr = ['brain-even', 'brain-calc', 'brain-gcd', 'brain-progression', 'brain-prime'];
 

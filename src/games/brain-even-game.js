@@ -1,22 +1,20 @@
-import {
-  createResultObj, generateNumber, startGame,
-} from '../index.js';
+import { generateNumber } from '../utils.js';
+import startGame from '../index.js';
 
 const isEven = (number) => (number % 2 === 0);
 
-const startBrainEvenFunction = () => {
-  const newNumber = generateNumber();
+const startBrainEvenGame = () => {
+  const gameQuestion = generateNumber().toString();
 
-  const gameAnswer = isEven(newNumber) ? 'yes' : 'no';
-  const gameText = newNumber.toString();
+  const gameAnswer = isEven(gameQuestion) ? 'yes' : 'no';
 
-  const result = createResultObj(gameText, gameAnswer);
+  const result = { gameQuestion, gameAnswer };
 
   return result;
 };
 
 const gameConfig = {
-  gameFn: startBrainEvenFunction,
+  gameFunction: startBrainEvenGame,
   gameTerms: 'Answer "yes" if the number is even otherwise answer "no".',
 };
 

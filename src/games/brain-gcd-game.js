@@ -1,15 +1,9 @@
-import {
-  createResultObj, generateNumber, startGame,
-} from '../index.js';
+import { generateNumber } from '../utils.js';
+import startGame from '../index.js';
 
-// by Euclid
-
-const getGCDOfPair = (a, b) => {
+const getGCD = (a, b) => {
   if (a === b) {
-    const gameAnswer = a.toString();
-    const gameText = `${a} ${b}`;
-
-    return createResultObj(gameText, gameAnswer);
+    return a;
   }
 
   let smallNum;
@@ -27,21 +21,21 @@ const getGCDOfPair = (a, b) => {
     rest = bigNum % smallNum;
   } while (rest !== 0);
 
-  const gameText = `${a} ${b}`;
-  const gameAnswer = smallNum.toString();
-
-  return createResultObj(gameText, gameAnswer);
+  return smallNum;
 };
 
-const startBrainGCDFunction = () => {
+const startBrainGCDGame = () => {
   const number1 = generateNumber();
   const number2 = generateNumber();
 
-  return getGCDOfPair(number1, number2);
+  const gameQuestion = `${number1} ${number2}`;
+  const gameAnswer = getGCD(number1, number2).toString();
+
+  return { gameQuestion, gameAnswer };
 };
 
 const gameConfig = {
-  gameFn: startBrainGCDFunction,
+  gameFunction: startBrainGCDGame,
   gameTerms: 'Find the greatest common divisor of given numbers.',
 };
 
