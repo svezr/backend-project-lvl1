@@ -1,6 +1,6 @@
 import {
   createResultObj, generateNumber, startGame,
-} from './index.js';
+} from '../index.js';
 
 const isEven = (number) => (number % 2 === 0);
 

@@ -1,6 +1,6 @@
 import {
   createResultObj, generateNumber, startGame,
-} from './index.js';
+} from '../index.js';
 
 const isPrime = (numb) => {
   if (numb % Math.sqrt(numb) === 0) {
