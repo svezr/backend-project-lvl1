@@ -5,9 +5,7 @@ const startGame = (gameConfig) => {
 
   const userName = readlineSync.question('May I have your name? ');
 
-  let userAnswer;
-
-  const { gameFunction, gameTerms } = gameConfig;
+  const { gameData: getGameData, gameTerms } = gameConfig;
   const helloMsg = `Hello, ${userName}!`;
   const roundCount = gameConfig.roundCount || 3;
   const gameQuestionText = gameConfig.gameQuestionText || 'Question:';
@@ -19,20 +17,19 @@ const startGame = (gameConfig) => {
   console.log(gameTerms);
 
   for (let i = 1; i <= roundCount; i += 1) {
-    const { gameQuestion, gameAnswer } = gameFunction();
+    const { gameQuestion, gameAnswer } = getGameData();
 
     const roundQuestion = `${gameQuestionText} ${gameQuestion}`;
 
     console.log(roundQuestion);
 
-    userAnswer = readlineSync.question(gameAnswerText);
+    const userAnswer = readlineSync.question(gameAnswerText);
 
     const isCorrect = (userAnswer === gameAnswer);
 
     if (!isCorrect) {
-      const gameLoseText = gameConfig.gameLose || `${userAnswer} is wrong answer ;(. Correct answer was ${gameAnswer}.\nLet's try again, ${userName}!`;
-
-      console.log(gameLoseText);
+      console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${gameAnswer}.`);
+      console.log(`Let's try again, ${userName}!`);
 
       return;
     }

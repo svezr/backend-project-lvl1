@@ -6,25 +6,22 @@ const getGCD = (a, b) => {
     return a;
   }
 
-  let smallNum;
-  let rest;
-  let bigNum;
+  let number1 = Math.max(a, b);
+  let number2 = Math.min(a, b);
 
-  smallNum = Math.max(a, b);
-  rest = Math.min(a, b);
+  while (number2 !== 0) {
+    number1 %= number2;
 
-  do {
-    bigNum = smallNum;
+    const temp = number1;
 
-    smallNum = rest;
+    number1 = number2;
+    number2 = temp;
+  }
 
-    rest = bigNum % smallNum;
-  } while (rest !== 0);
-
-  return smallNum;
+  return number1;
 };
 
-const startBrainGCDGame = () => {
+const generateGameData = () => {
   const number1 = generateNumber();
   const number2 = generateNumber();
 
@@ -35,7 +32,7 @@ const startBrainGCDGame = () => {
 };
 
 const gameConfig = {
-  gameFunction: startBrainGCDGame,
+  gameData: generateGameData,
   gameTerms: 'Find the greatest common divisor of given numbers.',
 };
 

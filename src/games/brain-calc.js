@@ -30,8 +30,9 @@ const getRandomOperation = () => {
   return randomObject;
 };
 
+const generateGameData = () => {
+  const operationObject = getRandomOperation();
 
-const getBrainCalcGame = (operationObject) => {
   const { onlyOneDigitAllowed, sign, operationFunction } = operationObject;
 
   const [firstNumber, secondNumber] = generatePairNumber(onlyOneDigitAllowed);
@@ -45,16 +46,8 @@ const getBrainCalcGame = (operationObject) => {
   return result;
 };
 
-const startBrainCalcGame = () => {
-  const operationObject = getRandomOperation();
-
-  const result = getBrainCalcGame(operationObject);
-
-  return result;
-};
-
 const gameConfig = {
-  gameFunction: startBrainCalcGame,
+  gameData: generateGameData,
   gameTerms: 'What is the result of the expression?',
 };
 

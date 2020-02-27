@@ -15,7 +15,7 @@ const isPrime = (numb) => {
   return true;
 };
 
-const startPrimeGame = () => {
+const generateGameData = () => {
   const maxAllowedNumber = 99;
   const minAllowedNumber = -99;
 
@@ -28,7 +28,7 @@ const startPrimeGame = () => {
 };
 
 const gameConfig = {
-  gameFunction: startPrimeGame,
+  gameData: generateGameData,
   gameTerms: 'Answer "yes" if given number is prime. Otherwise answer "no".',
 };
 
