@@ -9,11 +9,11 @@ Brain Games.
 
 Демонстрация проверки стандартов кодирования (make lint):
 
-[![asciicast](https://asciinema.org/a/9aLTspoOi2OnCL4NPmBs72ZSj.svg)](https://asciinema.org/a/9aLTspoOi2OnCL4NPmBs72ZSj)
+[![asciicast](https://asciinema.org/a/43YzSSbkTr9tjiZABzuOJC8sD.svg)](https://asciinema.org/a/43YzSSbkTr9tjiZABzuOJC8sD)
 
 Демонстрация установки (npm link):
 
-[![asciicast](https://asciinema.org/a/ugu1du1uyr8EDkyWPf8Lipy29.svg)](https://asciinema.org/a/ugu1du1uyr8EDkyWPf8Lipy29)
+[![asciicast](https://asciinema.org/a/CP0aEhTX2El6oCBBJ8cswKIII.svg)](https://asciinema.org/a/CP0aEhTX2El6oCBBJ8cswKIII)
 
 Демонстрация публикации (make publish):
 
@@ -23,20 +23,20 @@ Brain Games.
 
 brain-even:
 
-[![asciicast](https://asciinema.org/a/vMUE1AlmKbZ2j89TNCsMIrZ41.svg)](https://asciinema.org/a/vMUE1AlmKbZ2j89TNCsMIrZ41)
+[![asciicast](https://asciinema.org/a/3jcdO3zVhx9g9TL7LaJu2B5h2.svg)](https://asciinema.org/a/3jcdO3zVhx9g9TL7LaJu2B5h2)
 
 brain-calc:
 
-[![asciicast](https://asciinema.org/a/j9XgXobNBk241jS3Fvx0dZxoN.svg)](https://asciinema.org/a/j9XgXobNBk241jS3Fvx0dZxoN)
+[![asciicast](https://asciinema.org/a/QlpfLxYKkVnGiNRrR1i8TLEZq.svg)](https://asciinema.org/a/QlpfLxYKkVnGiNRrR1i8TLEZq)
 
 brain-gcd:
 
-[![asciicast](https://asciinema.org/a/7uGhpNj9FvGdYoBUc2Gvm9gh3.svg)](https://asciinema.org/a/7uGhpNj9FvGdYoBUc2Gvm9gh3)
+[![asciicast](https://asciinema.org/a/0eq8HIM8Y38xfVU3SJavqjlBg.svg)](https://asciinema.org/a/0eq8HIM8Y38xfVU3SJavqjlBg)
 
 brain-progression:
 
-[![asciicast](https://asciinema.org/a/CRvUXI4juxCVNFNEsY0n71J2A.svg)](https://asciinema.org/a/CRvUXI4juxCVNFNEsY0n71J2A)
+[![asciicast](https://asciinema.org/a/tOCUa3Id7cbpiYObJFcazXvB8.svg)](https://asciinema.org/a/tOCUa3Id7cbpiYObJFcazXvB8)
 
 brain-prime:
 
-[![asciicast](https://asciinema.org/a/goSrvPf3PLsv7sJxW7Fhbed4u.svg)](https://asciinema.org/a/goSrvPf3PLsv7sJxW7Fhbed4u)
+[![asciicast](https://asciinema.org/a/EUGpf4kIrEK2jI5mCsJFAL3Uo.svg)](https://asciinema.org/a/EUGpf4kIrEK2jI5mCsJFAL3Uo)

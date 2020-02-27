@@ -1,4 +1,4 @@
-export const generateNumber = (max = 99, min = 0) => {
+export const generateNumber = (max = 99, min = 1) => {
   const rnd = Math.random() * (max - min) + min;
   return Math.floor(rnd);
 };
