@@ -17,7 +17,7 @@ Brain Games.
 
 Демонстрация публикации (make publish):
 
-[![asciicast](https://asciinema.org/a/uUGCyOOhw2nA0v6Zqy7L8STHg.svg)](https://asciinema.org/a/uUGCyOOhw2nA0v6Zqy7L8STHg)
+[![asciicast](https://asciinema.org/a/YgOp19srrt92suzdjnPkCYGQE.svg)](https://asciinema.org/a/YgOp19srrt92suzdjnPkCYGQE)
 
 **Демонстрация работы игровых модулей:**
 
