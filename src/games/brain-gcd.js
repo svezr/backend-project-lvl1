@@ -1,5 +1,4 @@
 import { generateNumber } from '../utils.js';
-import startGame from '../index.js';
 
 const getGCD = (a, b) => {
   if (a === b) {
@@ -33,9 +32,7 @@ const generateGameData = () => {
 
 const gameConfig = {
   gameData: generateGameData,
-  gameTerms: 'Find the greatest common divisor of given numbers.',
+  gameDescription: 'Find the greatest common divisor of given numbers.',
 };
 
-export default () => {
-  startGame(gameConfig);
-};
+export default gameConfig;

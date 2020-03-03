@@ -1,5 +1,4 @@
 import { generateNumber } from '../utils.js';
-import startGame from '../index.js';
 
 const isEven = (number) => (number % 2 === 0);
 
@@ -15,9 +14,7 @@ const generateGameData = () => {
 
 const gameConfig = {
   gameData: generateGameData,
-  gameTerms: 'Answer "yes" if the number is even otherwise answer "no".',
+  gameDescription: 'Answer "yes" if the number is even otherwise answer "no".',
 };
 
-export default () => {
-  startGame(gameConfig);
-};
+export default gameConfig;

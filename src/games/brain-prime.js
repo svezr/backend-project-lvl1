@@ -1,5 +1,4 @@
 import { generateNumber } from '../utils.js';
-import startGame from '../index.js';
 
 const isPrime = (numb) => {
   if ((numb <= 0) || (numb % Math.sqrt(numb) === 0)) {
@@ -29,9 +28,7 @@ const generateGameData = () => {
 
 const gameConfig = {
   gameData: generateGameData,
-  gameTerms: 'Answer "yes" if given number is prime. Otherwise answer "no".',
+  gameDescription: 'Answer "yes" if given number is prime. Otherwise answer "no".',
 };
 
-export default () => {
-  startGame(gameConfig);
-};
+export default gameConfig;

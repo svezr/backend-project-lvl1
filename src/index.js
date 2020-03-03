@@ -1,22 +1,28 @@
 import readlineSync from 'readline-sync';
 
-const startGame = (gameConfig) => {
+const defaultTextValues = {
+  roundsCount: 3,
+  gameQuestionText: 'Question:',
+  gameAnswerText: 'Your answer: ',
+  gameCorrectText: 'Correct!',
+};
+
+const playGame = (gameConfig) => {
   console.log('Welcome to the Brain Games!');
 
   const userName = readlineSync.question('May I have your name? ');
 
-  const { gameData: getGameData, gameTerms } = gameConfig;
-  const helloMsg = `Hello, ${userName}!`;
-  const roundCount = gameConfig.roundCount || 3;
-  const gameQuestionText = gameConfig.gameQuestionText || 'Question:';
-  const gameAnswerText = gameConfig.gameAnswerText || 'Your answer: ';
-  const gameCorrectText = gameConfig.gameCorrect || 'Correct!';
-  const gameWin = gameConfig.gameWin || `Congratulations, ${userName}!`;
+  const { gameData: getGameData, gameDescription } = gameConfig;
 
-  console.log(helloMsg);
-  console.log(gameTerms);
+  const roundsCount = gameConfig.roundsCount || defaultTextValues.roundsCount;
+  const gameQuestionText = gameConfig.gameQuestionText || defaultTextValues.gameQuestionText;
+  const gameAnswerText = gameConfig.gameAnswerText || defaultTextValues.gameAnswerText;
+  const gameCorrectText = gameConfig.gameCorrectText || defaultTextValues.gameCorrectText;
 
-  for (let i = 1; i <= roundCount; i += 1) {
+  console.log(`Hello, ${userName}!`);
+  console.log(gameDescription);
+
+  for (let i = 1; i <= roundsCount; i += 1) {
     const { gameQuestion, gameAnswer } = getGameData();
 
     const roundQuestion = `${gameQuestionText} ${gameQuestion}`;
@@ -25,9 +31,9 @@ const startGame = (gameConfig) => {
 
     const userAnswer = readlineSync.question(gameAnswerText);
 
-    const isCorrect = (userAnswer === gameAnswer);
+    const userAnsweredCorrectly = (userAnswer === gameAnswer);
 
-    if (!isCorrect) {
+    if (!userAnsweredCorrectly) {
       console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${gameAnswer}.`);
       console.log(`Let's try again, ${userName}!`);
 
@@ -37,7 +43,7 @@ const startGame = (gameConfig) => {
     console.log(gameCorrectText);
   }
 
-  console.log(gameWin);
+  console.log(`Congratulations, ${userName}!`);
 };
 
-export default startGame;
+export default playGame;

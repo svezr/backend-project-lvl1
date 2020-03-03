@@ -1,5 +1,4 @@
 import { generateNumber, generatePairNumber } from '../utils.js';
-import startGame from '../index.js';
 
 const operations = [
   {
@@ -48,10 +47,7 @@ const generateGameData = () => {
 
 const gameConfig = {
   gameData: generateGameData,
-  gameTerms: 'What is the result of the expression?',
+  gameDescription: 'What is the result of the expression?',
 };
 
-
-export default () => {
-  startGame(gameConfig);
-};
+export default gameConfig;

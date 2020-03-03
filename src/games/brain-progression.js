@@ -1,11 +1,10 @@
 import { generateNumber } from '../utils.js';
-import startGame from '../index.js';
 
-const getQuestion = (startNumber, diffValue, numberOfElements, indexToHide) => {
+const getQuestion = (lowerProgressionEdge, progressionStep, progressionLength, indexToHide) => {
   const result = [];
 
-  for (let i = 0; i < numberOfElements; i += 1) {
-    const elementOfProgression = (i === indexToHide) ? '..' : startNumber + diffValue * i;
+  for (let i = 0; i < progressionLength; i += 1) {
+    const elementOfProgression = (i === indexToHide) ? '..' : lowerProgressionEdge + progressionStep * i;
     result.push(elementOfProgression);
   }
 
@@ -15,21 +14,22 @@ const getQuestion = (startNumber, diffValue, numberOfElements, indexToHide) => {
 };
 
 const generateGameData = () => {
-  const startNumber = generateNumber();
+  const lowerProgressionEdge = generateNumber();
 
-  const numberOfElements = 10;
+  const progressionLength = 10;
 
-  const minDiffValue = 2;
-  const maxDiffValue = 9;
-  const diffValue = generateNumber(maxDiffValue, minDiffValue);
+  const minStepValue = 2;
+  const maxStepValue = 9;
+  const progressionStep = generateNumber(maxStepValue, minStepValue);
 
-  const minHideValue = 3;
-  const maxHideValue = numberOfElements - 2;
-  const indexToHide = generateNumber(maxHideValue, minHideValue);
+  const minHideIndex = 2;
+  const maxHideIndex = progressionLength;
+  const indexToHide = generateNumber(maxHideIndex, minHideIndex);
 
-  const gameQuestion = getQuestion(startNumber, diffValue, numberOfElements, indexToHide);
+  const gameQuestion = getQuestion(lowerProgressionEdge, progressionStep, progressionLength,
+    indexToHide);
 
-  const correctAnswer = startNumber + diffValue * indexToHide;
+  const correctAnswer = lowerProgressionEdge + progressionStep * indexToHide;
   const gameAnswer = correctAnswer.toString();
 
   return { gameQuestion, gameAnswer };
@@ -37,9 +37,7 @@ const generateGameData = () => {
 
 const gameConfig = {
   gameData: generateGameData,
-  gameTerms: 'What number is missing in the progression?',
+  gameDescription: 'What number is missing in the progression?',
 };
 
-export default () => {
-  startGame(gameConfig);
-};
+export default gameConfig;
