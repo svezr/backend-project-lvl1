@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-const defaultTextValues = {
+const defaultGameValues = {
   roundsCount: 3,
   gameQuestionText: 'Question:',
   gameAnswerText: 'Your answer: ',
@@ -12,18 +12,18 @@ const playGame = (gameConfig) => {
 
   const userName = readlineSync.question('May I have your name? ');
 
-  const { gameData: getGameData, gameDescription } = gameConfig;
+  const { generateGameData, gameDescription } = gameConfig;
 
-  const roundsCount = gameConfig.roundsCount || defaultTextValues.roundsCount;
-  const gameQuestionText = gameConfig.gameQuestionText || defaultTextValues.gameQuestionText;
-  const gameAnswerText = gameConfig.gameAnswerText || defaultTextValues.gameAnswerText;
-  const gameCorrectText = gameConfig.gameCorrectText || defaultTextValues.gameCorrectText;
+  const roundsCount = gameConfig.roundsCount || defaultGameValues.roundsCount;
+  const gameQuestionText = gameConfig.gameQuestionText || defaultGameValues.gameQuestionText;
+  const gameAnswerText = gameConfig.gameAnswerText || defaultGameValues.gameAnswerText;
+  const gameCorrectText = gameConfig.gameCorrectText || defaultGameValues.gameCorrectText;
 
   console.log(`Hello, ${userName}!`);
   console.log(gameDescription);
 
   for (let i = 1; i <= roundsCount; i += 1) {
-    const { gameQuestion, gameAnswer } = getGameData();
+    const { gameQuestion, gameAnswer } = generateGameData();
 
     const roundQuestion = `${gameQuestionText} ${gameQuestion}`;
 

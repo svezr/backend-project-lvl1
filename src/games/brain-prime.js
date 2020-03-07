@@ -1,7 +1,7 @@
 import { generateNumber } from '../utils.js';
 
 const isPrime = (numb) => {
-  if ((numb <= 0) || (numb % Math.sqrt(numb) === 0)) {
+  if ((numb <= 1) || (numb % Math.sqrt(numb) === 0)) {
     return false;
   }
 
@@ -18,7 +18,7 @@ const generateGameData = () => {
   const maxAllowedNumber = 99;
   const minAllowedNumber = -99;
 
-  const questionNumber = generateNumber(maxAllowedNumber, minAllowedNumber);
+  const questionNumber = generateNumber(maxAllowedNumber, minAllowedNumber).value;
 
   const gameQuestion = questionNumber;
   const gameAnswer = isPrime(questionNumber) ? 'yes' : 'no';
@@ -27,7 +27,7 @@ const generateGameData = () => {
 };
 
 const gameConfig = {
-  gameData: generateGameData,
+  generateGameData,
   gameDescription: 'Answer "yes" if given number is prime. Otherwise answer "no".',
 };
 

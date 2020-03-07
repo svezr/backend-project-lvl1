@@ -1,15 +1,21 @@
-export const generateNumber = (max = 99, min = 1) => {
-  const rnd = Math.random() * (max - min) + min;
-  return Math.floor(rnd);
+export const generateNumber = (maxValue = 99, minValue = 1) => {
+  const rnd = Math.random() * (maxValue - minValue) + minValue;
+
+  const randomData = {
+    value: Math.floor(rnd),
+    minValue,
+    maxValue,
+  };
+  return randomData;
 };
 
 export const generatePairNumber = (easyMode = false) => {
-  const firstNumber = generateNumber();
+  const firstNumber = generateNumber().value;
 
   const minAllowedNumber = 1;
   const maxAllowedNumber = 9;
-  const secondNumber = easyMode ? generateNumber(maxAllowedNumber, minAllowedNumber)
-    : generateNumber();
+  const secondNumber = easyMode ? generateNumber(maxAllowedNumber, minAllowedNumber).value
+    : generateNumber().value;
 
   return [firstNumber, secondNumber];
 };

@@ -1,10 +1,11 @@
 import { generateNumber } from '../utils.js';
 
-const getQuestion = (lowerProgressionEdge, progressionStep, progressionLength, indexToHide) => {
+const getQuestion = (firstProgressionElement, progressionStep,
+  progressionLength, hiddenElementIndex) => {
   const result = [];
 
   for (let i = 0; i < progressionLength; i += 1) {
-    const elementOfProgression = (i === indexToHide) ? '..' : lowerProgressionEdge + progressionStep * i;
+    const elementOfProgression = (i === hiddenElementIndex) ? '..' : firstProgressionElement + progressionStep * i;
     result.push(elementOfProgression);
   }
 
@@ -14,29 +15,33 @@ const getQuestion = (lowerProgressionEdge, progressionStep, progressionLength, i
 };
 
 const generateGameData = () => {
-  const lowerProgressionEdge = generateNumber();
+  const firstProgressionElement = generateNumber().value;
 
   const progressionLength = 10;
 
   const minStepValue = 2;
   const maxStepValue = 9;
-  const progressionStep = generateNumber(maxStepValue, minStepValue);
 
-  const minHideIndex = 2;
-  const maxHideIndex = progressionLength;
-  const indexToHide = generateNumber(maxHideIndex, minHideIndex);
+  const randomNumberData = generateNumber(maxStepValue, minStepValue);
 
-  const gameQuestion = getQuestion(lowerProgressionEdge, progressionStep, progressionLength,
-    indexToHide);
+  const progressionStep = randomNumberData.value;
 
-  const correctAnswer = lowerProgressionEdge + progressionStep * indexToHide;
+  const minHiddenIndex = randomNumberData.minValue;
+  const maxHiddenIndex = randomNumberData.maxValue;
+
+  const hiddenElementIndex = generateNumber(maxHiddenIndex, minHiddenIndex).value;
+
+  const gameQuestion = getQuestion(firstProgressionElement, progressionStep, progressionLength,
+    hiddenElementIndex);
+
+  const correctAnswer = firstProgressionElement + progressionStep * hiddenElementIndex;
   const gameAnswer = correctAnswer.toString();
 
   return { gameQuestion, gameAnswer };
 };
 
 const gameConfig = {
-  gameData: generateGameData,
+  generateGameData,
   gameDescription: 'What number is missing in the progression?',
 };
 

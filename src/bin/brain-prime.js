@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 import playGame from '../index.js';
-import gameConfig from '../games/brain-prime.js';
+import primeGame from '../games/brain-prime.js';
 
-playGame(gameConfig);
+playGame(primeGame);

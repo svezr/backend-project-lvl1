@@ -3,17 +3,17 @@ import { generateNumber, generatePairNumber } from '../utils.js';
 const operations = [
   {
     sign: '+',
-    operationFunction: (a, b) => a + b,
+    operation: (a, b) => a + b,
     onlyOneDigitAllowed: false,
   },
   {
     sign: '-',
-    operationFunction: (a, b) => a - b,
+    operation: (a, b) => a - b,
     onlyOneDigitAllowed: false,
   },
   {
     sign: '*',
-    operationFunction: (a, b) => a * b,
+    operation: (a, b) => a * b,
     onlyOneDigitAllowed: true,
   },
 ];
@@ -22,21 +22,23 @@ const getRandomOperation = () => {
   const countOfOperations = operations.length;
   const maxIndexOperation = countOfOperations - 1;
 
-  const randomIndexOperation = generateNumber(maxIndexOperation).toString();
+  const randomData = generateNumber(maxIndexOperation);
 
-  const randomObject = operations[randomIndexOperation];
+  const randomIndexOperation = randomData.value.toString();
 
-  return randomObject;
+  const operationData = operations[randomIndexOperation];
+
+  return operationData;
 };
 
 const generateGameData = () => {
-  const operationObject = getRandomOperation();
+  const operationData = getRandomOperation();
 
-  const { onlyOneDigitAllowed, sign, operationFunction } = operationObject;
+  const { onlyOneDigitAllowed, sign, operation } = operationData;
 
   const [firstNumber, secondNumber] = generatePairNumber(onlyOneDigitAllowed);
 
-  const gameAnswer = operationFunction(firstNumber, secondNumber).toString();
+  const gameAnswer = operation(firstNumber, secondNumber).toString();
 
   const gameQuestion = `${firstNumber} ${sign} ${secondNumber}`;
 
@@ -46,7 +48,7 @@ const generateGameData = () => {
 };
 
 const gameConfig = {
-  gameData: generateGameData,
+  generateGameData,
   gameDescription: 'What is the result of the expression?',
 };
 
