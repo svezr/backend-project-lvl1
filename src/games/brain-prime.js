@@ -1,4 +1,4 @@
-import { generateNumber } from '../utils.js';
+import generateNumber from '../utils.js';
 
 const isPrime = (numb) => {
   if ((numb <= 1) || (numb % Math.sqrt(numb) === 0)) {

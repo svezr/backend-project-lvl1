@@ -1,28 +1,26 @@
-import { generateNumber, generatePairNumber } from '../utils.js';
+import generateNumber from '../utils.js';
 
 const operations = [
   {
     sign: '+',
     operation: (a, b) => a + b,
-    onlyOneDigitAllowed: false,
   },
   {
     sign: '-',
     operation: (a, b) => a - b,
-    onlyOneDigitAllowed: false,
   },
   {
     sign: '*',
     operation: (a, b) => a * b,
-    onlyOneDigitAllowed: true,
   },
 ];
 
 const getRandomOperation = () => {
   const countOfOperations = operations.length;
-  const maxIndexOperation = countOfOperations - 1;
+  const maxIndexOperation = countOfOperations;
+  const minIndexOperation = 0;
 
-  const randomData = generateNumber(maxIndexOperation);
+  const randomData = generateNumber(maxIndexOperation, minIndexOperation);
 
   const randomIndexOperation = randomData.value.toString();
 
@@ -34,9 +32,10 @@ const getRandomOperation = () => {
 const generateGameData = () => {
   const operationData = getRandomOperation();
 
-  const { onlyOneDigitAllowed, sign, operation } = operationData;
+  const { sign, operation } = operationData;
 
-  const [firstNumber, secondNumber] = generatePairNumber(onlyOneDigitAllowed);
+  const firstNumber = generateNumber().value;
+  const secondNumber = generateNumber().value;
 
   const gameAnswer = operation(firstNumber, secondNumber).toString();
 

@@ -1,4 +1,4 @@
-import { generateNumber } from '../utils.js';
+import generateNumber from '../utils.js';
 
 const isEven = (number) => (number % 2 === 0);
 
