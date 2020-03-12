@@ -16,26 +16,21 @@ const operations = [
 ];
 
 const getRandomOperation = () => {
-  const countOfOperations = operations.length;
-  const maxIndexOperation = countOfOperations;
+  const maxIndexOperation = operations.length - 1;
   const minIndexOperation = 0;
 
-  const randomData = generateNumber(maxIndexOperation, minIndexOperation);
+  const randomIndexOperation = generateNumber(minIndexOperation, maxIndexOperation);
 
-  const randomIndexOperation = randomData.value.toString();
-
-  const operationData = operations[randomIndexOperation];
+  const operationData = operations[randomIndexOperation.toString()];
 
   return operationData;
 };
 
 const generateGameData = () => {
-  const operationData = getRandomOperation();
+  const { sign, operation } = getRandomOperation();
 
-  const { sign, operation } = operationData;
-
-  const firstNumber = generateNumber().value;
-  const secondNumber = generateNumber().value;
+  const firstNumber = generateNumber();
+  const secondNumber = generateNumber();
 
   const gameAnswer = operation(firstNumber, secondNumber).toString();
 

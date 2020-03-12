@@ -15,21 +15,19 @@ const getQuestion = (firstProgressionElement, progressionStep,
 };
 
 const generateGameData = () => {
-  const firstProgressionElement = generateNumber().value;
+  const firstProgressionElement = generateNumber();
 
   const progressionLength = 10;
 
   const minStepValue = 2;
   const maxStepValue = 9;
 
-  const randomNumberData = generateNumber(maxStepValue, minStepValue);
+  const progressionStep = generateNumber(minStepValue, maxStepValue);
 
-  const progressionStep = randomNumberData.value;
+  const minHiddenIndex = 0;
+  const maxHiddenIndex = progressionLength - 1;
 
-  const minHiddenIndex = randomNumberData.minValue;
-  const maxHiddenIndex = randomNumberData.maxValue;
-
-  const hiddenElementIndex = generateNumber(maxHiddenIndex, minHiddenIndex).value;
+  const hiddenElementIndex = generateNumber(minHiddenIndex, maxHiddenIndex);
 
   const gameQuestion = getQuestion(firstProgressionElement, progressionStep, progressionLength,
     hiddenElementIndex);

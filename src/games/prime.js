@@ -18,7 +18,7 @@ const generateGameData = () => {
   const maxAllowedNumber = 99;
   const minAllowedNumber = -99;
 
-  const questionNumber = generateNumber(maxAllowedNumber, minAllowedNumber).value;
+  const questionNumber = generateNumber(minAllowedNumber, maxAllowedNumber);
 
   const gameQuestion = questionNumber;
   const gameAnswer = isPrime(questionNumber) ? 'yes' : 'no';

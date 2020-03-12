@@ -3,7 +3,7 @@ import generateNumber from '../utils.js';
 const isEven = (number) => (number % 2 === 0);
 
 const generateGameData = () => {
-  const gameQuestion = generateNumber().value.toString();
+  const gameQuestion = generateNumber().toString();
 
   const gameAnswer = isEven(gameQuestion) ? 'yes' : 'no';
 

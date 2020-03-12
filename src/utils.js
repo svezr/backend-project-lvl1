@@ -1,12 +1,7 @@
-const generateNumber = (maxValue = 99, minValue = 1) => {
-  const rnd = Math.random() * (maxValue - minValue) + minValue;
+const generateNumber = (minValue = 1, maxValue = 99) => {
+  const rnd = Math.random() * (maxValue - minValue + 1) + minValue;
 
-  const randomData = {
-    value: Math.floor(rnd),
-    minValue,
-    maxValue,
-  };
-  return randomData;
+  return Math.floor(rnd);
 };
 
 export default generateNumber;

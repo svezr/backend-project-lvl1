@@ -21,8 +21,8 @@ const getGCD = (a, b) => {
 };
 
 const generateGameData = () => {
-  const number1 = generateNumber().value;
-  const number2 = generateNumber().value;
+  const number1 = generateNumber();
+  const number2 = generateNumber();
 
   const gameQuestion = `${number1} ${number2}`;
   const gameAnswer = getGCD(number1, number2).toString();
