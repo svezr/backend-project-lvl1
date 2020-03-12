@@ -21,7 +21,7 @@ const getRandomOperation = () => {
 
   const randomIndexOperation = generateNumber(minIndexOperation, maxIndexOperation);
 
-  const operationData = operations[randomIndexOperation.toString()];
+  const operationData = operations[randomIndexOperation];
 
   return operationData;
 };
